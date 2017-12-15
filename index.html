@@ -91,7 +91,7 @@
       // or launch Chrome (close all the existing Chrome browsers) with the following option:
       // chrome.exe --allow-file-access-from-files <sampleHtmlFile>
       //
-      /*const speechOptions = {
+      const speechOptions = {
          speechRecognizer: new BotChat.Speech.BrowserSpeechRecognizer(),
          speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
       };
@@ -99,14 +99,14 @@
       // // Option 3: Cognitive Services speech recognition using API key (cross browser, speech priming support)
       //
       */
-      const speechOptions = {
-        speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: '6939837b2f4146d1af791ae251ede605' }),
-        speechSynthesizer: new CognitiveServices.SpeechSynthesizer({
-          gender: CognitiveServices.SynthesisGender.Female,
-          subscriptionKey: '6939837b2f4146d1af791ae251ede605',
-          voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
-        })
-      };
+      //const speechOptions = {
+      //  speechRecognizer: new CognitiveServices.SpeechRecognizer({ subscriptionKey: '6939837b2f4146d1af791ae251ede605' }),
+      //  speechSynthesizer: new CognitiveServices.SpeechSynthesizer({
+      //    gender: CognitiveServices.SynthesisGender.Female,
+      //    subscriptionKey: '6939837b2f4146d1af791ae251ede605',
+      //    voiceName: 'Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'
+    //    })
+      //};
 
       //
 
