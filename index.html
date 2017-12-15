@@ -91,10 +91,10 @@
       // or launch Chrome (close all the existing Chrome browsers) with the following option:
       // chrome.exe --allow-file-access-from-files <sampleHtmlFile>
       //
-      const speechOptions = {
-         speechRecognizer: new BotChat.Speech.BrowserSpeechRecognizer(),
-         speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
-      };
+    //  const speechOptions = {
+      //   speechRecognizer: new BotChat.Speech.BrowserSpeechRecognizer(),
+        // speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
+    //  };
 
       // // Option 3: Cognitive Services speech recognition using API key (cross browser, speech priming support)
       //
@@ -112,28 +112,28 @@
 
       // // Option 4: Cognitive Services speech recognition using a token (usually generated in a secure backend using your API key)
       //
-      // function getToken() {
+       function getToken() {
       //   // Normally this token fetch is done from your secured backend to avoid exposing the API key and this call
       //   // would be to your backend, or to retrieve a token that was served as part of the original page.
 
-      //   return fetch(
-      //     'https://api.cognitive.microsoft.com/sts/v1.0/issueToken',
-      //     {
-      //       headers: {
-      //         'Ocp-Apim-Subscription-Key': 'YOUR_COGNITIVE_SPEECH_API_KEY'
-      //       },
-      //       method: 'POST'
-      //     }
-      //   ).then(res => res.text());
-      // }
+      return fetch(
+          'https://api.cognitive.microsoft.com/sts/v1.0/issueToken',
+           {
+            headers: {
+              'Ocp-Apim-Subscription-Key': '6939837b2f4146d1af791ae251ede605'
+            },
+            method: 'POST'
+         }
+        ).then(res => res.text());
+      }
 
-      // const speechOptions = {
-      //   speechRecognizer: new CognitiveServices.SpeechRecognizer({
-      //     fetchCallback: (authFetchEventId) => getToken(),
-      //     fetchOnExpiryCallback: (authFetchEventId) => getToken()
-      //   }),
-      //   speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
-      // };
+       const speechOptions = {
+         speechRecognizer: new CognitiveServices.SpeechRecognizer({
+           fetchCallback: (authFetchEventId) => getToken(),
+           fetchOnExpiryCallback: (authFetchEventId) => getToken()
+         }),
+         speechSynthesizer: new BotChat.Speech.BrowserSpeechSynthesizer()
+       };
 
       // // Option 5: Your own custom implementations of ISpeechRecognizer and ISpeechSynthesizer
       //
